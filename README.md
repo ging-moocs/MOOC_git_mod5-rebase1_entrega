@@ -39,7 +39,6 @@ $ git checkout -b ops <id_de_commit> # Crea una nueva rama llamada "ops" a parti
 ```
 
 
-
 ### Paso 3: Funcionalidad x^2
 Crear un commit en la rama "ops", que añada a la calculadora del fichero index.html el botón x^2 que eleve un número al cuadrado.
 
@@ -139,8 +138,8 @@ git log --oneline
 Nos cambiamos a la rama "master" y ejecutamos
 
 ```
-git checkout master
-git rebase <id del commit>
+$ git checkout master
+$ git rebase <id del commit>
 ```
 
 Como hemos modificado el mismo fichero y las mismas líneas que en los commits posteriores de la rama "master" surgirán conflictos.
@@ -149,8 +148,8 @@ Debemos editar el fichero index.html para eliminar los conflictos.
 Una vez resueltos, se debe comprobar primero que la integración funciona correctamente. Después se debe continuar la integración (rebase) añadiendo los cambios al índice y continuando el rebase:
 
 ```
-git add .
-git rebase --continue
+$ git add .
+$ git rebase --continue
 ```
 
 Una vez generado un commit, git pasa a intentar integrar el siguiente de la rama origen. Y así hasta el último de la rama origen. 
@@ -158,12 +157,13 @@ Este proceso habrá que repetirlo dos veces: la primera vez para el botón x^4 y
 
 El resultado final de index.html tendrá los 5 botones: x^2, x^3, x^4, sin(x) y 1/x.
 
-### Paso 5: Subir todas las ramas del repositorio local al nuevo repositorio en GitHub.
+### Paso 5: Subir todas las ramas del repositorio local a un nuevo repositorio en GitHub.
 
-Por último, subimos los cambios realizados en ambas ramas a Github
+Creamos un nuevo repositorio en Github llamado "my_calculator_2". Por último, subimos los cambios realizados en ambas ramas a Github.
 
 ```
-git push --all
+$ git remote set-url origin https://github.com/<mi_usuario_de_github>/my_calculator_2
+$ git push --all
 ```
 
 La opción --force o -f permite subir un repositorio incompatible, pero ¡Cuidado borra el existente! Se debe utilizar solo en casos en que no hay otra solución.
