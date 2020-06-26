@@ -206,10 +206,10 @@ $ npx moocauto                 ## Pasa los tests al fichero a entregar
 Se puede pasar la herramienta de autocorrección tantas veces como se desee.
 
 
-RÚBRICA: La resolución de cada uno de estos puntos dará un el % indicado de la nota total: 
--	10%:  Existe el repositorio my_calculator 
--	30%:  Los tres primeros commits de master son los originales: "x^3 button", "x^4 button" y "sin(x) button"
--	30%:  El cuarto commit de la rama master es "x^2 button" y contiene lo pedido
--	30%:  El quinto commit de la rama master es "1/x button" y contiene lo pedido
+**RÚBRICA:** La resolución de cada uno de estos puntos dará un el % indicado de la nota total: 
+* **10%:**  Existe el repositorio my_calculator 
+* **30%:**  Los tres primeros commits de master son los originales: "x^3 button", "x^4 button" y "sin(x) button"
+* **30%:**  El cuarto commit de la rama master es "x^2 button" y contiene lo pedido
+* **30%:**  El quinto commit de la rama master es "1/x button" y contiene lo pedido
 
 
