@@ -34,13 +34,13 @@ describe('Rebase 1', function () {
         should.exist(student);
     });
 
-    it("(Prechecks) Buscando la rama master", async function () {
+    it("(Prechecks) Buscando la rama main", async function () {
         this.score = 0.25;
-        this.msg_ok = `Se ha encontrado la rama master en ${REPO_URL}`;
+        this.msg_ok = `Se ha encontrado la rama main en ${REPO_URL}`;
         [_, _] = await to(fs.remove(PATH_REPO));
         [error_repo, _] = await to(mygit.clone(REPO_URL));
         if (error_repo) {
-            this.msg_err = `No se encuentra rama master en ${REPO_URL}`;
+            this.msg_err = `No se encuentra rama main en ${REPO_URL}`;
             error_critical = this.msg_err;
             should.not.exist(error_critical);
         }
@@ -48,10 +48,10 @@ describe('Rebase 1', function () {
         should.not.exist(error_repo);
     });
 
-    it("Comprobando si está x^3 en el contenido tras el rebase de master", async function () {
+    it("Comprobando si está x^3 en el contenido tras el rebase de main", async function () {
         const expected = "x^3";
         this.score = 1.5;
-        this.msg_err = `Ha habido un problema al buscar '${expected}' en el contenido tras el rebase de master`;
+        this.msg_err = `Ha habido un problema al buscar '${expected}' en el contenido tras el rebase de main`;
 
         if (error_critical) {
             this.msg_err = error_critical;
@@ -59,17 +59,17 @@ describe('Rebase 1', function () {
         } else {
             let output;
             [err_show, output] = await to(mygit.show(["HEAD:index.html"]));
-            this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de master`;
-            this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de master`;
+            this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
+            this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             Utils.search(expected, output).should.be.equal(true);
         }
     });
 
 
-    it("Comprobando si está x^4 en el contenido tras el rebase de master", async function () {
+    it("Comprobando si está x^4 en el contenido tras el rebase de main", async function () {
         const expected = "x^4";
         this.score = 1.5;
-        this.msg_err = `Ha habido un problema al buscar '${expected}' en el contenido tras el rebase de master`;
+        this.msg_err = `Ha habido un problema al buscar '${expected}' en el contenido tras el rebase de main`;
 
         if (error_critical) {
             this.msg_err = error_critical;
@@ -77,16 +77,16 @@ describe('Rebase 1', function () {
         } else {
             let output;
             [err_show, output] = await to(mygit.show(["HEAD:index.html"]));
-            this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de master`;
-            this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de master`;
+            this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
+            this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             Utils.search(expected, output).should.be.equal(true);
         }
     });
 
-    it("Comprobando si está x^2 en el contenido tras el rebase de master", async function () {
+    it("Comprobando si está x^2 en el contenido tras el rebase de main", async function () {
         const expected = "x^2";
         this.score = 3;
-        this.msg_err = `Ha habido un problema al buscar '${expected}' en el contenido tras el rebase de master`;
+        this.msg_err = `Ha habido un problema al buscar '${expected}' en el contenido tras el rebase de main`;
 
         if (error_critical) {
             this.msg_err = error_critical;
@@ -94,16 +94,16 @@ describe('Rebase 1', function () {
         } else {
             let output;
             [err_show, output] = await to(mygit.show(["HEAD:index.html"]));
-            this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de master`;
-            this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de master`;
+            this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
+            this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             Utils.search(expected, output).should.be.equal(true);
         }
     });
 
-    it("Comprobando si está 1/x en el contenido tras el rebase de master", async function () {
+    it("Comprobando si está 1/x en el contenido tras el rebase de main", async function () {
         const expected = "1/x";
         this.score = 3;
-        this.msg_err = `Ha habido un problema al buscar '${expected}' en el contenido tras el rebase de master`;
+        this.msg_err = `Ha habido un problema al buscar '${expected}' en el contenido tras el rebase de main`;
 
         if (error_critical) {
             this.msg_err = error_critical;
@@ -111,8 +111,8 @@ describe('Rebase 1', function () {
         } else {
             let output;
             [err_show, output] = await to(mygit.show(["HEAD:index.html"]));
-            this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de master`;
-            this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de master`;
+            this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
+            this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             Utils.search(expected, output).should.be.equal(true);
         }
     });

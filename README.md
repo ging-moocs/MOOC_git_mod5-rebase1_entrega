@@ -11,11 +11,11 @@
 
 ## Descripción de la práctica
 
-Reutilizar la cuenta y el repositorio my_calculator en GitHub tal y como quedó en la entrega anterior. Crear una nueva rama que parta del primer commit de master "x^3 button" con el nombre "ops". Crear dos commits en la nueva rama "ops", el primero añade el botón x^2 y el segundo con el botón 1/x. Integrar la nueva rama ops en la rama master utilizando "git rebase ...".
+Reutilizar la cuenta y el repositorio my_calculator en GitHub tal y como quedó en la entrega anterior. Crear una nueva rama que parta del primer commit de main "x^3 button" con el nombre "ops". Crear dos commits en la nueva rama "ops", el primero añade el botón x^2 y el segundo con el botón 1/x. Integrar la nueva rama ops en la rama main utilizando "git rebase ...".
 
-Para terminar se deben subir los nuevos commits integrados en la rama "master" a un nuevo repositorio en su cuenta de GitHub, denominado "my_calculator_2".
+Para terminar se deben subir los nuevos commits integrados en la rama "main" a un nuevo repositorio en su cuenta de GitHub, denominado "my_calculator_2".
 
-El grafo de commits es más fácil de seguir cuando se integra con rebase, ya que todos los commits de la rama lateral pasan a master y todo queda en master. En cambio se pierde algo de la historia del proyecto, porque desaparecen las ramas laterales donde se suelen desarrollar las nuevas funcionalidades. Aunque no lo vamos a ver hasta la entrega 4, rebase tiene además la opción interactiva que permite rehacer la rama que se integra y sus commits. Por esta razón hay personas que prefieren el rebase frente al merge para integrar desarrollos.
+El grafo de commits es más fácil de seguir cuando se integra con rebase, ya que todos los commits de la rama lateral pasan a main y todo queda en main. En cambio se pierde algo de la historia del proyecto, porque desaparecen las ramas laterales donde se suelen desarrollar las nuevas funcionalidades. Aunque no lo vamos a ver hasta la entrega 4, rebase tiene además la opción interactiva que permite rehacer la rama que se integra y sus commits. Por esta razón hay personas que prefieren el rebase frente al merge para integrar desarrollos.
 
 ¡Cuidado! Las ramas que se hayan compartido con terceros no deben modificarse con rebase, porque si un tercero ha descargado la rama, deberá repetir el rebase en su repositorio local. 
 
@@ -31,7 +31,7 @@ $ git clone https://github.com/<mi_usuario_de_github>/my_calculator   my_calcula
 
 ### Paso 2: Nueva rama
 
-El siguiente paso será crear una rama de nombre "ops" que comience después del primer commit (con mensaje "x^3 button") de la rama "master" y restaurarla en el directorio de trabajo, para poder trabajar sobre ella. Es necesario consultar el id del commit  "x^3 button" para poder crear la rama a partir del mismo
+El siguiente paso será crear una rama de nombre "ops" que comience después del primer commit (con mensaje "x^3 button") de la rama "main" y restaurarla en el directorio de trabajo, para poder trabajar sobre ella. Es necesario consultar el id del commit  "x^3 button" para poder crear la rama a partir del mismo
 
 ```
 $ git commit --oneline # Lista los commits existentes incluyendo su id
@@ -122,27 +122,27 @@ $ git add index.html
 $ git commit -m "1/x button"
 ```
 
-### Paso 4: Integrar la rama "ops" en "master"
+### Paso 4: Integrar la rama "ops" en "main"
 
-Integrar la rama ops en la rama master con "git rebase" para crear una calculadora con cuatro botones: x^2, x^3, x^4, sin(x) y 1/x. 
+Integrar la rama ops en la rama main con "git rebase" para crear una calculadora con cuatro botones: x^2, x^3, x^4, sin(x) y 1/x. 
 
 "git rebase …" realiza la integración ejecutando un bucle, donde cada iteración traslada un commit de la rama origen a su nueva base. El traslado implica integrar el código del commit con el de su nueva base. Si la integración tiene conflictos, git indica el error y finaliza. 
 
 "git status" muestra los ficheros con conflictos. Los conflictos deben resolverse entonces con el editor. 
 
-Primero comprobamos el id del commit que queremos integrar en master (el de "1/x button")
+Primero comprobamos el id del commit que queremos integrar en main (el de "1/x button")
 ```
 git log --oneline
 ```
 
-Nos cambiamos a la rama "master" y ejecutamos
+Nos cambiamos a la rama "main" y ejecutamos
 
 ```
-$ git checkout master
+$ git checkout main
 $ git rebase <id del commit>
 ```
 
-Como hemos modificado el mismo fichero y las mismas líneas que en los commits posteriores de la rama "master" surgirán conflictos.
+Como hemos modificado el mismo fichero y las mismas líneas que en los commits posteriores de la rama "main" surgirán conflictos.
 Debemos editar el fichero index.html para eliminar los conflictos. 
 
 Una vez resueltos, se debe comprobar primero que la integración funciona correctamente. Después se debe continuar la integración (rebase) añadiendo los cambios al índice y continuando el rebase:
@@ -224,8 +224,8 @@ Dado que es un curso para principiantes, ante la duda les pedimos que sean benev
 
 **RÚBRICA:** La resolución de cada uno de estos puntos dará un el % indicado de la nota total: 
 * **10%:**  Existe el repositorio my_calculator 
-* **30%:**  Los tres primeros commits de master son los originales: "x^3 button", "x^4 button" y "sin(x) button"
-* **30%:**  El cuarto commit de la rama master es "x^2 button" y contiene lo pedido
-* **30%:**  El quinto commit de la rama master es "1/x button" y contiene lo pedido
+* **30%:**  Los tres primeros commits de main son los originales: "x^3 button", "x^4 button" y "sin(x) button"
+* **30%:**  El cuarto commit de la rama main es "x^2 button" y contiene lo pedido
+* **30%:**  El quinto commit de la rama main es "1/x button" y contiene lo pedido
 
 
