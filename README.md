@@ -223,7 +223,7 @@ Dado que es un curso para principiantes, ante la duda les pedimos que sean benev
 **OJO! Una vez enviada la evaluación, está no se puede cambiar.** Piensen bien su evaluación antes de enviarla.
 
 **RÚBRICA:** La resolución de cada uno de estos puntos dará un el % indicado de la nota total: 
-* **10%:**  Existe el repositorio my_calculator 
+* **10%:**  Existe el repositorio my_calculator2
 * **30%:**  Los tres primeros commits de main son los originales: "x^3 button", "x^4 button" y "sin(x) button"
 * **30%:**  El cuarto commit de la rama main es "x^2 button" y contiene lo pedido
 * **30%:**  El quinto commit de la rama main es "1/x button" y contiene lo pedido
