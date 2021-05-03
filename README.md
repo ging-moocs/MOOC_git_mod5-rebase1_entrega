@@ -34,7 +34,7 @@ $ git clone https://github.com/<mi_usuario_de_github>/my_calculator   my_calcula
 El siguiente paso será crear una rama de nombre "ops" que comience después del primer commit (con mensaje "x^3 button") de la rama "main" y restaurarla en el directorio de trabajo, para poder trabajar sobre ella. Es necesario consultar el id del commit  "x^3 button" para poder crear la rama a partir del mismo
 
 ```
-$ git commit --oneline # Lista los commits existentes incluyendo su id
+$ git log --oneline # Lista los commits existentes incluyendo su id
 $ git checkout -b ops <id_de_commit> # Crea una nueva rama llamada "ops" a partir del commit indicado
 ```
 
@@ -79,7 +79,7 @@ $ git commit -m "x^2 button"
 ```
 ### Paso 3: Funcionalidad 1/x
 
-Crear un commit en la rama "ops", que añada a la calculadora del fichero index.html el botón x^2 que eleve un número al cuadrado.
+Crear un commit en la rama "ops", que añada a la calculadora del fichero index.html el botón 1/x que divida 1 entre el número introducido.
 
 ```
 <!DOCTYPE html>
@@ -124,7 +124,8 @@ $ git commit -m "1/x button"
 
 ### Paso 4: Integrar la rama "ops" en "main"
 
-Integrar la rama ops en la rama main con "git rebase" para crear una calculadora con cuatro botones: x^2, x^3, x^4, sin(x) y 1/x. 
+Integrar la rama ops en la rama main con "git rebase" para crear una calculadora con cinco
+botones: x^2, x^3, x^4, sin(x) y 1/x. 
 
 "git rebase …" realiza la integración ejecutando un bucle, donde cada iteración traslada un commit de la rama origen a su nueva base. El traslado implica integrar el código del commit con el de su nueva base. Si la integración tiene conflictos, git indica el error y finaliza. 
 
