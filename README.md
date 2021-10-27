@@ -176,7 +176,7 @@ Para ayudar al desarrollo, se provee una herramienta de autocorrección que prue
 
 ```
 $ git clone git@github.com:ging-moocs/MOOC_git_mod5-rebase1_entrega
-$ cd MOOC_git_mod4-merge_entrega
+$ cd MOOC_git_mod5-rebase1_entrega
 $ npm install
 ```
 
