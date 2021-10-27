@@ -5,7 +5,7 @@
 
 // IMPORTS
 const git = require('simple-git/promise');
-const Utils = require("./utils");
+const Utils = require("./testutils");
 const to = require("./to");
 const path = require('path');
 const fs = require('fs-extra');
@@ -35,7 +35,7 @@ describe('Rebase 1', function () {
     });
 
     it("(Prechecks) Buscando la rama main", async function () {
-        this.score = 0.25;
+        this.score = 0.5;
         this.msg_ok = `Se ha encontrado la rama main en ${REPO_URL}`;
         [_, _] = await to(fs.remove(PATH_REPO));
         [error_repo, _] = await to(mygit.clone(REPO_URL));

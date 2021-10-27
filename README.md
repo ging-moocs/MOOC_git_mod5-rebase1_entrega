@@ -26,7 +26,7 @@ El grafo de commits es más fácil de seguir cuando se integra con rebase, ya qu
 El primer paso será clonar en un repositorio local el repositorio "my_calculator" de GitHub en un directorio "my_calculator_2". Se debe haber terminado el desarrollo de la práctica anterior previamente a la realización de esta entrega.
 
 ```
-$ git clone https://github.com/<mi_usuario_de_github>/my_calculator   my_calculator_2 
+$ git clone git@github.com:<mi_usuario_de_github>/my_calculator   my_calculator_2 
 ``` 
 
 ### Paso 2: Nueva rama
@@ -162,65 +162,58 @@ El resultado final de index.html tendrá los 5 botones: x^2, x^3, x^4, sin(x) y 
 Creamos un nuevo repositorio en Github llamado "my_calculator_2". Por último, subimos los cambios realizados en ambas ramas a Github.
 
 ```
-$ git remote set-url origin https://github.com/<mi_usuario_de_github>/my_calculator_2
+$ git remote set-url origin git@github.com:<mi_usuario_de_github>/my_calculator_2
 $ git push --all
 ```
 
 La opción --force o -f permite subir un repositorio incompatible, pero ¡Cuidado borra el existente! Se debe utilizar solo en casos en que no hay otra solución.
 
-## Prueba de la práctica 
 
-Para ayudar al desarrollo, se provee una herramienta de autocorrección que prueba las distintas funcionalidades que se piden en el enunciado. Para utilizar esta herramienta debes tener node.js (y npm) ([https://nodejs.org/es/](https://nodejs.org/es/)) y Git instalados. 
+## Prueba de la práctica
 
-
-El proyecto debe clonarse en el ordenador desde el que se está trabajando:
+Para ayudar al desarrollo, se provee una herramienta de autocorrección que prueba las distintas funcionalidades que se piden en el enunciado. Para utilizar esta herramienta debes tener node.js (y npm) ([https://nodejs.org/es/](https://nodejs.org/es/)) y Git instalados. Primero ejecute los siguientes comandos **en un directorio diferente al de la práctica**:
 
 ```
-$ git clone https://github.com/ging-moocs/MOOC_git_mod5-rebase1_entrega
-$ cd MOOC_git_mod5-rebase1_entrega
+$ git clone git@github.com:ging-moocs/MOOC_git_mod5-rebase1_entrega
+$ cd MOOC_git_mod4-merge_entrega
 $ npm install
 ```
 
 A continuación guarde en un fichero llamado 'git_account' su nombre de usuario de GitHub
-
 ```
 echo "mi_nombre_de_usuario_en_github" >> git_account
 ```
 
-Para instalar y hacer uso de la [herramienta de autocorrección](https://www.npmjs.com/package/moocauto) en el ordenador local, ejecuta los siguientes comandos en el directorio del proyecto:
+Para instalar y hacer uso de la [herramienta de autocorrección](https://www.npmjs.com/package/autocorector) en el ordenador local, ejecuta los siguientes comandos en el directorio del proyecto:
 
 ```
-$ npm install -g moocauto     ## Instala el programa de test
-$ moocauto                    ## Pasa los tests al fichero a entregar
-............................  ## en el directorio de trabajo
+$ sudo npm install -g autocorector  ## Instala el programa de test
+$ autocorector                      ## Pasa los tests al fichero a entregar
+............................        ## en el directorio de trabajo
 ... (resultado de los tests)
 ```
 También se puede instalar como paquete local, en el caso de que no se dispongas de permisos en el ordenador desde el que estás trabajando:
 ```
-$ npm install moocauto         ## Instala el programa de test
-$ npx moocauto                 ## Pasa los tests al fichero a entregar
+$ npm install autocorector     ## Instala el programa de test
+$ npx autocorector             ## Pasa los tests al fichero a entregar
 ............................   ## en el directorio de trabajo
 ... (resultado de los tests)
 ```
 
+Se puede pasar la herramienta de autoorrección tantas veces como se desee sin ninguna repercusión en la calificación.
 
-Se puede pasar la herramienta de autocorrección tantas veces como se desee.
+## Instrucciones para la Entrega y Evaluación.
 
-## Entrega de la práctica
+Una vez satisfecho con su calificación, el alumno puede subir su entrega a MiriadaX con el siguiente comando:
+```
+$ autocorector --upload
+```
+o, si se ha instalado como paquete local:
+```
+$ npx autocorector --upload
+```
 
-El alumno debe entregar el nombre de la cuenta de Github donde ha subido su práctica.
-
-## Evaluación de la práctica
-
-La evaluación de la práctica se realizará mediante revisión por pares (P2P). Cada alumno tendrá que revisar la práctica de 3 de sus compañeros y otros 3 revisarán la suya. Se puede utilizar la herramienta de autocorrección (moocauto) como ayuda para revisar la práctica de los compañeros. El evaluador debe comprobar que la entrega es correcta buscando en GitHub el nombre de cuenta entregado y comprobando que contiene el repositorio pedido con las características solicitadas.  
-
-La inspección de los commits, ramas y ademas elementos del repositorio puede hacerse navegando en GitHub o clonando el repositorio en local e inspeccionando con Git.
-
-El objetivo de este curso es sacar el máximo provecho al trabajo que están dedicando, por lo que les recomendamos que utilicen la evaluación para ayudar a sus compañeros enviando comentarios sobre la corrección del código, su claridad, legibilidad, estructuración y documentación. 
-
-Dado que es un curso para principiantes, ante la duda les pedimos que sean benevolentes con sus compañeros, porque muchos participantes están empezando y los primeros pasos siempre son difíciles.
-
-**OJO! Una vez enviada la evaluación, está no se puede cambiar.** Piensen bien su evaluación antes de enviarla.
+La herramienta de autocorrección preguntará por el correo del alumno y el token de MiriadaX. En [este enlace](https://docs.google.com/presentation/d/e/2PACX-1vRYA9npW0Xg_c6_SWg2jAU7L2ti83-GY1VYKTzM1U5AgsW-0BC3xbwi__gsrsZ50Md0ja2HyadNzEPn/pub?start=false&loop=false&delayms=5000) se proveen instrucciones para encontrar dicho token.
 
 **RÚBRICA:** La resolución de cada uno de estos puntos dará un el % indicado de la nota total: 
 * **10%:**  Existe el repositorio my_calculator2
