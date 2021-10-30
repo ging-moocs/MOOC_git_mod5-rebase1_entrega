@@ -1,12 +1,6 @@
-/**
- * Checker Script for mooc_git-entrega3_rebase1
- */
-
-
 // IMPORTS
 const git = require('simple-git/promise');
 const Utils = require("./testutils");
-const to = require("./to");
 const path = require('path');
 const fs = require('fs-extra');
 
@@ -38,14 +32,14 @@ describe('Rebase 1', function () {
     it("(Prechecks) Buscando la rama main", async function () {
         this.score = 1;
         this.msg_ok = `Se ha encontrado la rama main en ${REPO_URL}`;
-        [_, _] = await to(fs.remove(PATH_REPO));
-        [error_repo, _] = await to(mygit.clone(REPO_URL));
+        [_, _] = await Utils.to(fs.remove(PATH_REPO));
+        [error_repo, _] = await Utils.to(mygit.clone(REPO_URL));
         if (error_repo) {
             this.msg_err = `No se encuentra rama main en ${REPO_URL}`;
             error_critical = this.msg_err;
             should.not.exist(error_critical);
         }
-        await to(mygit.cwd(PATH_REPO));
+        await Utils.to(mygit.cwd(PATH_REPO));
         should.not.exist(error_repo);
     });
 
@@ -59,7 +53,7 @@ describe('Rebase 1', function () {
             should.not.exist(error_critical);
         } else {
             let output;
-            [err_show, output] = await to(mygit.show(["HEAD:index.html"]));
+            [err_show, output] = await Utils.to(mygit.show(["HEAD:index.html"]));
             this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             Utils.search(expected, output).should.be.equal(true);
@@ -77,7 +71,7 @@ describe('Rebase 1', function () {
             should.not.exist(error_critical);
         } else {
             let output;
-            [err_show, output] = await to(mygit.show(["HEAD:index.html"]));
+            [err_show, output] = await Utils.to(mygit.show(["HEAD:index.html"]));
             this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             Utils.search(expected, output).should.be.equal(true);
@@ -94,7 +88,7 @@ describe('Rebase 1', function () {
             should.not.exist(error_critical);
         } else {
             let output;
-            [err_show, output] = await to(mygit.show(["HEAD:index.html"]));
+            [err_show, output] = await Utils.to(mygit.show(["HEAD:index.html"]));
             this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             Utils.search(expected, output).should.be.equal(true);
@@ -111,7 +105,7 @@ describe('Rebase 1', function () {
             should.not.exist(error_critical);
         } else {
             let output;
-            [err_show, output] = await to(mygit.show(["HEAD:index.html"]));
+            [err_show, output] = await Utils.to(mygit.show(["HEAD:index.html"]));
             this.msg_ok = `Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             this.msg_err = `NO Se ha encontrado '${expected}' en el contenido tras el rebase de main`;
             Utils.search(expected, output).should.be.equal(true);
