@@ -4,7 +4,7 @@
 
 <br/><br/><br/>
 
-# Módulo 5: Integración de ramas con sobreescritura y con sobreescritura interactivo, commit inicial de GitHub, .gitignore y comandos GIT: clone, remote y push - Entrega P2P: Rebase 1
+# Módulo 5: Integración de ramas - Entrega P2P: Rebase 1
 
 ## Objetivos
  * Continuar practicando con repositorios locales y remotos, commits y ramas, pero integrando con rebase.
@@ -201,7 +201,7 @@ $ npx autocorector             ## Pasa los tests al fichero a entregar
 ... (resultado de los tests)
 ```
 
-Se puede pasar la herramienta de autoorrección tantas veces como se desee sin ninguna repercusión en la calificación.
+Se puede pasar la herramienta de autocorrección tantas veces como se desee sin ninguna repercusión en la calificación.
 
 ## Instrucciones para la Entrega y Evaluación.
 
