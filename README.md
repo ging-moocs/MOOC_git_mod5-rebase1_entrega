@@ -27,6 +27,7 @@ El primer paso será clonar en un repositorio local el repositorio "my_calculato
 
 ```
 $ git clone git@github.com:<mi_usuario_de_github>/my_calculator   my_calculator_2 
+$ cd my_calculator_2
 ``` 
 
 ### Paso 2: Nueva rama
@@ -149,11 +150,12 @@ Debemos editar el fichero index.html para eliminar los conflictos.
 Una vez resueltos, se debe comprobar primero que la integración funciona correctamente. Después se debe continuar la integración (rebase) añadiendo los cambios al índice y continuando el rebase:
 
 ```
-$ git add .
+$ git add index.html
 $ git rebase --continue
 ```
 
-Una vez generado un commit, git pasa a intentar integrar el siguiente de la rama origen. Y así hasta el último de la rama origen. 
+Una vez generado un commit, git pasa a intentar integrar el siguiente de la rama origen. Y así hasta el último de la rama origen. Es necesario guardar los cambios en el editor que sale al hacer el rebase para que se apliquen.
+
 Este proceso habrá que repetirlo dos veces: la primera vez para el botón x^4 y la segunda para el botón sin(x).
 
 El resultado final de index.html tendrá los 5 botones: x^2, x^3, x^4, sin(x) y 1/x.
@@ -180,7 +182,7 @@ $ cd MOOC_git_mod5-rebase1_entrega
 $ npm install
 ```
 
-A continuación guarde en un fichero llamado 'git_account' su nombre de usuario de GitHub
+A continuación, en el directorio `MOOC_git_mod5-rebase1_entrega` guarde en un fichero llamado 'git_account' su nombre de usuario de GitHub
 ```
 echo "mi_nombre_de_usuario_en_github" >> git_account
 ```
