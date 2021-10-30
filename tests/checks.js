@@ -29,13 +29,14 @@ describe('Rebase 1', function () {
         this.msg_err = "No se ha encontrado el fichero 'git_account' que debe contener el nombre de usuario de github";
 
         student = fs.readFileSync(path.join(PATH_ASSIGNMENT, 'git_account'), {encoding: 'utf8'}).replace(/^\s+|\s+$/g, '');;
-        REPO_URL = `git://github.com/${student}/${REPO_NAME}.git`;
+        REPO_URL = `git@github.com:${student}/${REPO_NAME}.git`;
+
         this.msg_ok = `Se ha encontrado el fichero 'git_account': ${student}`;
         should.exist(student);
     });
 
     it("(Prechecks) Buscando la rama main", async function () {
-        this.score = 0.5;
+        this.score = 1;
         this.msg_ok = `Se ha encontrado la rama main en ${REPO_URL}`;
         [_, _] = await to(fs.remove(PATH_REPO));
         [error_repo, _] = await to(mygit.clone(REPO_URL));
