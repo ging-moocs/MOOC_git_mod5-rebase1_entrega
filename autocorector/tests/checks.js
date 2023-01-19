@@ -7,7 +7,7 @@ const fs = require('fs-extra');
 
 // CONSTS
 const REPO_NAME = 'my_calculator_2';
-const PATH_ASSIGNMENT = path.resolve(path.join(__dirname, "../"));
+const PATH_ASSIGNMENT = path.resolve(path.join(__dirname, "../../"));
 const PATH_REPO = path.join(PATH_ASSIGNMENT, REPO_NAME);
 
 // GLOBALS
