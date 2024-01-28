@@ -5,6 +5,8 @@
 
 # Módulo 5: Integración de ramas - Entrega P2P: Rebase 1
 
+Versión: 28 de enero de 2024
+
 ## Objetivos
  * Continuar practicando con repositorios locales y remotos, commits y ramas, pero integrando con rebase.
 

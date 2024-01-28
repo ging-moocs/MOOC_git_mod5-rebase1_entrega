@@ -6,8 +6,8 @@
     "info": {
         "githubURL": "ging-moocs/MOOC_git_mod5-rebase1_entrega",
         "serverUrl": "https://moocbot.dit.upm.es/",
-        "courseId": "1261",
-        "assignmentId": "539"
+        "courseId": "1600",
+        "assignmentId": "975"
     },
     "dependencies": {
         "autocorector": "^3.1.3",
